@@ -1,0 +1,36 @@
+<section class="app-password-field">
+<h2>Please check your password</h2>
+<form action="">
+<label for="password-input">
+<input
+  id="password-input"
+  type="password"
+  name="password"
+  placeholder="Enter your password here"
+  aria-label="Password"
+  [(ngModel)]="password"
+  (input)="checkPasswordStrength()"
+>
+</label>
+</form>
+<div class="app-section-indicator">
+  <div class="gray" [ngClass]="{'red': isWeak || isEasy}"></div>
+  <div class="gray" [ngClass]="{'red': isWeak, 'yellow': isMedium}"></div>
+  <div class="gray" [ngClass]="{'red': isWeak, 'green': isStrong}"></div>
+</div>
+
+  <div *ngIf="isWeak && !isMedium && !isStrong" class="app-section-message-text red-message">
+    Your password is too short. Type moore than 8 symbols
+  </div>
+  <div *ngIf="isEasy && !isMedium && !isStrong && !isWeak" class="app-section-message-text red-message">
+    Your password is too easy. Try to add letters or numbers or symbols
+  </div>
+  <div *ngIf="isMedium && !isStrong" class="app-section-message-text yellow-message">
+    Your password is good, but still you can improve it. Try to combine letters, symbols and numbers
+  </div>
+  <div *ngIf="isStrong" class="app-section-message-text green-message">
+    Brilliant! Your password is strong. You can sleep well now
+  </div>
+</section>
+
+

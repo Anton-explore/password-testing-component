@@ -1,0 +1,64 @@
+.app-password-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+input {
+  margin: 20px;
+  padding: 3px;
+  width: 300px;
+  height: 30px;
+}
+
+.app-section-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  & div {
+    width: 100px;
+    height: 10px;
+    border-radius: 5px;
+  }
+}
+
+.gray {
+  background-color: gray;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.app-section-message-text {
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  border: 1px solid gray;
+  font-size: 16px;
+  text-align: center;
+  color: gray;
+}
+.red-message {
+  border-color: red;
+  color: red;
+}
+.yellow-message {
+  border-color: yellow;
+  color: rgb(215, 215, 39);
+}
+.green-message {
+  border-color: green;
+  color: green;
+}
