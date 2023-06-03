@@ -14,8 +14,8 @@
 </label>
 </form>
 <div class="app-section-indicator">
-  <div class="gray" [ngClass]="{'red': isWeak || isEasy}"></div>
-  <div class="gray" [ngClass]="{'red': isWeak, 'yellow': isMedium}"></div>
+  <div class="gray" [ngClass]="{'red': isWeak || isEasy, 'yellow': isMedium, 'green': isStrong}"></div>
+  <div class="gray" [ngClass]="{'red': isWeak, 'yellow': isMedium, 'green': isStrong}"></div>
   <div class="gray" [ngClass]="{'red': isWeak, 'green': isStrong}"></div>
 </div>
 
