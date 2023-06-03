@@ -15,11 +15,11 @@
   <div class="app-section-indicator">
     <div
       class="gray"
-      [ngClass]="{'red': pS.isWeak || pS.isEasy}">
+      [ngClass]="{'red': pS.isWeak || pS.isEasy, 'yellow': pS.isMedium, 'green': pS.isStrong}">
     </div>
     <div
       class="gray"
-      [ngClass]="{'red': pS.isWeak, 'yellow': pS.isMedium}">
+      [ngClass]="{'red': pS.isWeak, 'yellow': pS.isMedium, 'green': pS.isStrong}">
     </div>
     <div
       class="gray"
