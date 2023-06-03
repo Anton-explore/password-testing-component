@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MainSectionComponent } from './main-section.component';
 import { InputFieldComponent } from 'src/app/feature/input-field/input-field.component';
@@ -10,7 +11,7 @@ describe('MainSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule],
+      imports: [FormsModule, ReactiveFormsModule],
       declarations: [MainSectionComponent, InputFieldComponent],
     }).compileComponents();
 

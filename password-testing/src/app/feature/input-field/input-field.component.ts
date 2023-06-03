@@ -1,27 +1,12 @@
 import { Component } from '@angular/core';
+import { PassValidationService } from 'src/app/shared/services/pass-validation.service';
 
 @Component({
   selector: 'app-input-field',
   templateUrl: './input-field.component.html',
-  styleUrls: ['./input-field.component.scss']
+  styleUrls: ['./input-field.component.scss'],
+  providers: []
 })
 export class InputFieldComponent {
-  password!: string;
-  isWeak: boolean = false;
-  isEasy: boolean = false;
-  isMedium: boolean = false;
-  isStrong: boolean = false;
-
-  checkPasswordStrength() {
-    const length = this.password ? this.password.length : 0;
-    const hasLetters = /[a-zA-Z]/.test(this.password);
-    const hasDigits = /\d/.test(this.password);
-    const hasSymbols = /[^a-zA-Z0-9\s]/g.test(this.password);
-
-    this.isWeak = length > 0 && length < 8;
-    this.isEasy = length >= 8 && (hasLetters || hasDigits || hasSymbols);
-    this.isMedium = length >= 8 && ((hasLetters && hasDigits) || (hasDigits && hasSymbols) || (hasLetters && hasSymbols));
-    this.isStrong = length >= 8 && hasLetters && hasDigits && hasSymbols;
-
-  }
+  constructor(public pS: PassValidationService) {}
 }
